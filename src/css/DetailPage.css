@@ -1,0 +1,343 @@
+.banner {
+    height: 60vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+
+.containerDetail {
+    max-width: 1660px;
+    margin: auto;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.movie-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -100px;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.movie-content>.poster {
+    flex: 1;
+
+}
+
+.movie-content>.poster>.img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+}
+
+.info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative;
+    margin-top: 25px;
+}
+
+.info>* {
+    margin-bottom: 2rem;
+}
+
+.info>.title {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.info>.genres {
+    margin-left: 0.5rem;
+
+}
+.span {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: #0f0f0f;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.span:hover {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid gray;
+    color: gray;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: #0f0f0f;
+    margin-right: 5px;
+}
+
+.seatbox {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+.seat {
+    background-color: #444451;
+    height: 26px;
+    width: 32px;
+    margin: 3px;
+    font-size: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.seat.selected {
+    background-color: green;
+}
+
+.seat.sold {
+    background-color: #fff;
+}
+
+.row {
+    display: flex;
+}
+
+.seatbox {
+    max-width: 968px;
+}
+
+.timebox {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    margin-top: 100px;
+    margin-bottom: 150px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.Movies {
+    margin-bottom: 24px;
+}
+
+.Movies select {
+    appearance: none;
+    background: white;
+    font-size: 14px;
+    margin-left: 12px;
+    border-radius: 4px;
+    padding: 6px 24px;
+}
+
+.ShowCase {
+    margin: 0 0 48px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: #3b3b3b;
+    padding: 12px;
+    border-radius: 4px;
+    color: #7e7e7e;
+}
+
+.ShowCase li {
+    margin: 0 12px;
+}
+
+.Cinema {
+    margin-bottom: 18px;
+    perspective: 400px;
+
+    display: grid;
+    place-items: center;
+    grid-gap: 24px;
+}
+
+.Cinema .screen {
+    height: 70px;
+    background: white;
+    width: 100%;
+    transform: rotateX(-30deg) scale(1.1);
+    box-shadow: 0 3px 10px 2px;
+}
+
+.Cinema .seats {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(8, min-content);
+    align-items: center;
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 2) {
+    margin-right: 12px;
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 6) {
+    margin-right: 12px;
+}
+
+.Cinema .seats .seat:not(.occupied):hover,
+.Cinema .seats .seat:not(.occupied):focus {
+    cursor: pointer;
+    background: #c1eac5;
+    transform: scale(1.2);
+}
+
+.Cinema .seats .seat.selected::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: transparent;
+    border: 1px solid #7bc47f;
+    animation: show-off 0.8s;
+    visibility: hidden;
+}
+
+@keyframes show-off {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.seat {
+    display: inline-block;
+    background: #626262;
+    width: 16px;
+    height: 12px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+
+    position: relative;
+    top: 1px;
+}
+
+.seat.selected {
+    background: #7bc47f !important;
+}
+
+.seat.occupied {
+    background: #cfcfcf;
+}
+
+.info .count {
+    color: #7bc47f;
+}
+
+.info .total {
+    color: #7bc47f;
+}
+
+.knopkabroni {
+    background-color: #ff2c1f;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 13px;
+    margin-top: 20px;
+}
+
+.knopkabroni:hover {
+    cursor: pointer;
+    background-color: #c9180e;
+
+}
+.myticket{
+    margin-top:100px;
+    max-width: 968px;
+    margin-left: 30%;
+}
+.ticket{
+    margin-top: 20px;
+    border-bottom: 1px solid #ff2c1f;
+    display: flex;
+}
+.movie_time{
+    margin-bottom: 15px;
+}
+.delete{
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.delete button{
+    background-color: #ff2c1f;
+    color: white;
+    border-radius: 10px;
+    width: 75px;
+    height: 50px;
+}
+.delete button:hover{
+    background-color: #c9180e;
+    color: white;
+}
+.movie_no{
+    display: flex;
+    
+}
+.movie_no > p {
+    padding: 0 10px;
+    border:1px solid #c9180e;
+    border-radius:100px;
+    margin-left: 5px;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+    margin-bottom: 50px;
+    color: white;
+}
+.MuiTabPanel-root{
+    color: white;
+    min-height: 600px;
+}
+.MuiBox-root{
+    border: 1px solid white;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+.seansy{
+    margin-left: 450px;
+    margin-bottom: 20px;
+}
