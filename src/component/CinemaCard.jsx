@@ -12,5 +12,4 @@ const CinemaCard = ({ Cinema }) => {
         </Link>
     );
 }
-
 export default CinemaCard;

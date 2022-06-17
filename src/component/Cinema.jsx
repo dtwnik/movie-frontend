@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
 import CinemaCard from './CinemaCard';
-
+import audio from '../assets/img/audio.mp3'
 const Cinema = () => {
     const [appState, setAppState] = useState([]);
     useEffect(() => {

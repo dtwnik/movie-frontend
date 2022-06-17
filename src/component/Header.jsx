@@ -68,7 +68,7 @@ const Header = () => {
           {isAuth ? <div className='dropdown'>
             <div className='dropbtn'>{username}</div>
             <div className='dropdown-content'>
-              <Link to={'/ticket/'} className="ssylki">Мой билеты</Link>
+              <Link to={'/ticket/'} className="ssylki">Менің таңдаулыларым</Link>
               <div onClick={Logout} className="ssylki">Выйти</div>
             </div>
           </div> :
